@@ -28,3 +28,23 @@
 - MENSAJES HTTP: req, res.
   - Cabeceras: Metadatos. Se pueden definir cabecears propias. Ej, Content-Type
   - Contenido: 
+
+- REDIS: Software para manejo de caché.
+- Las aplicaciones que están corriendo sobre el mismo equipo ( o sea en la misma ip), se ubican mediante el puerto.
+- Ejemplo de puertos comunes:
+  :443 https
+  :80 HTTP
+  :22 SSH
+  :21 FTP
+  :27017 MONGO
+  :SQL 3306
+
+- lsof -i comando para mostrar los puertos en uso.
+- Se usa arquitectura de réplicas para tener dos o más servidores con la misma configuración. Si falla uno, responde otro.
+  Se conectan con un balanceador que reparte el tráfico entre las réplicas disponibles.
+- Escalado verticar es crecer una máquina. Escalado horizontal es conectar varias máquinas para sumar capacidad.
+- Máquinas dedicadas: Servidor que ejecuta uno o pocos programas específicos. Se podrían hacer réplicas de estos servers dedicados.
+- Para poder trabajar con réplicas se debe tener la opción de trabajo en cluster que conecta las instancias de software de cada réplica.
+- El almacenamiento de archivos se recomienda en maquina única dedicada.
+- Se recomienda usar X as a service a menos que sea obligatorio no hacerlo.
+  
